@@ -1,0 +1,30 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion parent.ext.sokerCompileSdkVersion
+    buildToolsVersion parent.ext.sokerBuildToolsVersion
+
+    defaultConfig {
+        minSdkVersion parent.ext.sokerMinSdkVersion
+        targetSdkVersion parent.ext.sokerTargetSdkVersion
+        versionCode parent.ext.sokerVersionCode
+        versionName parent.ext.sokerVersionName
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile parent.ext.libSokerAppcompat
+    compile parent.ext.libSokerRetrofit1
+    compile parent.ext.libSokerRetrofit2
+    compile parent.ext.libSokerRetrofit3
+    compile parent.ext.libSokerRetrofit4
+}

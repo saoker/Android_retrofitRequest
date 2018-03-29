@@ -1,0 +1,40 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:2.2.3'
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        jcenter()
+    }
+
+    ext {
+        sokerCompileSdkVersion = 26
+        sokerBuildToolsVersion = "26.0.1"
+        sokerApplicationId = "com.dyn.android.first.soker"
+        sokerMinSdkVersion = 18
+        sokerTargetSdkVersion = 26
+        sokerVersionCode = 1
+        sokerVersionName = "1.0"
+
+
+        libSokerAppcompat = 'com.android.support:appcompat-v7:26.0.0-alpha1'
+        libSokerRetrofit1 = 'com.squareup.retrofit2:retrofit:2.1.0'
+        libSokerRetrofit2 = 'com.squareup.retrofit2:converter-gson:2.1.0'
+        libSokerRetrofit3 = 'com.squareup.retrofit2:converter-scalars:2.1.0'
+        libSokerRetrofit4 = 'com.squareup.okhttp3:logging-interceptor:3.4.1'
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
